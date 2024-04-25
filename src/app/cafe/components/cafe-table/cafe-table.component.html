@@ -1,0 +1,22 @@
+<div class="col-8">
+  <table class="table">
+    <thead class="table-dark">
+      <tr test-id="table-header">
+        <th *ngFor="let header of tableHeaders" [attr.data-testid]="'table-header-' + header">{{header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cafe of cafeArray" [attr.data-testid]="'table-item-row-'+cafe.id">
+        <th scope="row" test-id="table-item-row-id">{{cafe.id}}</th>
+        <td test-id="table-item-row-nombre">{{cafe.nombre}}</td>
+        <td test-id="table-item-row-tipo">{{cafe.tipo}}</td>
+        <td test-id="table-item-row-region">{{cafe.region}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex flex-column">
+    <span *ngIf="cafesOrigen>=0">Total cafe de origen: {{cafesOrigen}}</span>
+    <span *ngIf="cafesOrigen>=0">Total cafe blend: {{cafesBlend}}</span>
+  </div>
+
+</div>
